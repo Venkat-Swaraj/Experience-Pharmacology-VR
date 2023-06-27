@@ -6,6 +6,7 @@ TagManager:
   tags:
   - meter
   - drug
+  - cotton
   layers:
   - Default
   - TransparentFX
