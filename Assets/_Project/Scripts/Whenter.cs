@@ -29,7 +29,7 @@ public class Whenter : MonoBehaviour
         {
             eye.SetBool("drugInstilled",true);
         }*/
-        if (other.CompareTag("meter"))
+        if (other.CompareTag("meter")&& eye.GetBool("Epinephrine"))
         {
             pressure.SetBool("Pressure",true);
         }
@@ -48,12 +48,21 @@ public class Whenter : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("drug"))
+        if (other.CompareTag("Epinephrine"))
         {
             Invoke("druginst",1);
-            eye.SetBool("drugInstilled",true);
+            eye.SetBool("Epinephrine",true);
+            //eye.SetBool("drugInstilled",true);
             Rtp.SetActive(true);
             Ltp.SetActive(true);
+        }
+        else if(other.CompareTag("Ephedrine"))
+        {
+            Invoke("druginst", 1);
+        }
+        else if(other.CompareTag("Atropine"))
+        {
+            eye.SetBool("Atropine", true);
         }
         else if(other.CompareTag("cotton"))
         {
@@ -66,6 +75,7 @@ public class Whenter : MonoBehaviour
     {
         lid.SetBool("Feather", false);
     }
+
 
     // Update is called once per frame
     void Update()

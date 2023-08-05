@@ -47,14 +47,14 @@ public class Raytest : MonoBehaviour
         // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(forward.transform.position, forward.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
         {
-            Debug.DrawRay(forward.transform.position, forward.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            //Debug.DrawRay(forward.transform.position, forward.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             
             if(hit.collider.name == "eye_collider")
             {
                 eye.SetBool("flash", true);
                 LtL.SetActive(true);
                 RtL.SetActive(true);
-                Debug.Log("Did Hit" + hit.transform.name);
+                //Debug.Log("Did Hit" + hit.transform.name);
             }
             else
             {
@@ -63,7 +63,7 @@ public class Raytest : MonoBehaviour
         }
         else
         {
-            Debug.DrawRay(forward.transform.position, forward.transform.TransformDirection(Vector3.forward) * 1000, Color.white);
+            //Debug.DrawRay(forward.transform.position, forward.transform.TransformDirection(Vector3.forward) * 1000, Color.white);
           
             
         }
