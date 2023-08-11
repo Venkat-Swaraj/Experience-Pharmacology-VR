@@ -33,7 +33,7 @@ public class Whenter : MonoBehaviour
         {
             pressure.SetBool("Pressure",true);
         }
-        else if (other.CompareTag("cotton"))
+        else if (other.CompareTag("cotton") && !eye.GetBool("Lignocaine"))
         {
             
                 lid.SetBool("Feather", true);
@@ -68,6 +68,14 @@ public class Whenter : MonoBehaviour
         {
             Ltc.SetActive(true);
             Rtc.SetActive(true);
+        }
+        else if (other.gameObject.tag == "Lignocaine")
+        {
+            eye.SetBool("Lignocaine",true);
+        }
+        else if (other.gameObject.tag == "Physostigmine")
+        {
+            eye.SetBool("Physostigmine",true);
         }
     }
 

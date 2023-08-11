@@ -10,6 +10,8 @@ TagManager:
   - Atropine
   - Ephedrine
   - Epinephrine
+  - Lignocaine
+  - Physostigmine
   layers:
   - Default
   - TransparentFX
