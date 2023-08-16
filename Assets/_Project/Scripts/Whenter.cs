@@ -25,15 +25,15 @@ public class Whenter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        /*if (other.CompareTag("drug"))
+        /*if (other.gameObject.tag="drug"))
         {
             eye.SetBool("drugInstilled",true);
         }*/
-        if (other.CompareTag("meter")&& eye.GetBool("Epinephrine"))
+        if (other.gameObject.tag=="meter"&& eye.GetBool("Epinephrine"))
         {
             pressure.SetBool("Pressure",true);
         }
-        else if (other.CompareTag("cotton") && !eye.GetBool("Lignocaine"))
+        else if (other.gameObject.tag=="cotton"&& !eye.GetBool("Lignocaine"))
         {
             
                 lid.SetBool("Feather", true);
@@ -48,7 +48,7 @@ public class Whenter : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Epinephrine"))
+        if (other.gameObject.tag=="Epinephrine")
         {
             Invoke("druginst",1);
             eye.SetBool("Epinephrine",true);
@@ -56,15 +56,15 @@ public class Whenter : MonoBehaviour
             Rtp.SetActive(true);
             Ltp.SetActive(true);
         }
-        else if(other.CompareTag("Ephedrine"))
+        else if(other.gameObject.tag=="Ephedrine")
         {
             Invoke("druginst", 1);
         }
-        else if(other.CompareTag("Atropine"))
+        else if(other.gameObject.tag=="Atropine")
         {
             eye.SetBool("Atropine", true);
         }
-        else if(other.CompareTag("cotton"))
+        else if(other.gameObject.tag=="cotton")
         {
             Ltc.SetActive(true);
             Rtc.SetActive(true);
